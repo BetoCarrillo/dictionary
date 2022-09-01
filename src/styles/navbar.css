@@ -1,0 +1,132 @@
+.navigation {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 1rem;
+    background-color: rgb(0, 187, 255);
+    color: black;
+    
+}
+
+.ponsLogo{
+   padding-bottom: 40px;
+   margin-left: 2rem;
+}
+.font-link {
+    font-family: 'Raleway Dots',
+        cursive;
+}
+
+.brand-name {
+    text-decoration: none;
+color: rgb(184, 242, 67);
+    font-size: 0.7rem;
+    margin-left: 1rem;
+    font-weight: bold;
+}
+
+.brand-name:hover {
+
+color: rgb(2, 2, 52);
+
+
+}
+
+.navigation-menu {
+    margin-left: auto;
+    
+}
+
+.navigation-menu ul {
+    display: flex;
+    padding: 0;
+        
+
+}
+
+.navigation-menu li {
+    list-style-type: none;
+    margin: 1rem;
+    
+}
+
+.navigation-menu li a {
+    text-decoration: none;
+    display: block;
+    color: white;
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+
+}
+
+.active{
+    color: rgb(184, 242, 67) !important;
+    padding-top: 2rem;
+   
+}
+
+.navbarIcon {
+    border: none;
+    padding: 0.5rem;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    display: none;
+    transform: translateY(-50%);
+
+    color: rgb(184, 242, 67);
+   
+   
+}
+.icon{font-size: 4rem;}
+
+
+
+@media screen and (max-width: 768px) {
+    .navbarIcon {
+            display: block;
+        }
+
+    .navigation-menu ul {
+            position: absolute;
+            top: 90px;
+            left: 0;
+            flex-direction: column;
+            width: 100%;
+            height: calc(100vh - 77px);
+            background-color: rgb(172, 94, 172);
+            display: none;
+          
+        }
+
+         .navigation-menu.expanded ul {
+                      display: block;
+                  }
+
+             .navigation.expanded {
+                                      background-color: rgb(172, 94, 172);
+             
+                                  }
+                                                                       
+    
+        .navigation-menu li {
+            text-align: center;
+            margin: 0;
+        }
+    
+        .navigation-menu li a {
+            color:rgb(184, 242, 67);
+            width: 100%;
+            padding: 1rem ;
+            font-size: 3rem;
+         
+        }
+    
+     
+    }
+

@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from 'react';
+
 /* import { useEffect } from 'react'; */
 import SearchBar from '../Components /SearchBar'
 import WordCards from '../Components /WordCards';
@@ -20,7 +21,7 @@ var requestOptions = {
 };
            
     try {
-            const response = await fetch(`https://cab-cors-anywhere.herokuapp.com/api.pons.com/v1/dictionary?q=${search}&l=deen&in=de&fm=1&ref=true&language=en`, requestOptions);
+            const response = await fetch(`https://cab-cors-anywhere.herokuapp.com/api.pons.com/v1/dictionary?q=${search}&l=deen&in=de&fm=1&ref=false&language=en`, requestOptions);
       const result = await response.json();
       /*   console.log(result[0].hits[0].roms[0].arabs) */
       console.log(result)
@@ -44,8 +45,8 @@ var requestOptions = {
           return <div key={i}>
             <WordCards   words={words} />
           </div>
-        }))}
-
+         }))}
+       
      </div> 
   
 </div>

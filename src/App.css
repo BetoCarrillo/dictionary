@@ -1,0 +1,46 @@
+
+.NaNLink{
+
+
+    text-decoration: none;
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(0, 187, 255);
+}
+
+.NaNSen {
+    text-decoration: none;
+    text-align: center;
+    font-size: 2rem;
+    
+}
+
+.addLink{
+    color: rgb(127, 196, 127);
+font-size: 2rem;
+
+
+}
+
+.addSen{
+    text-decoration: none;
+        color: rgb(127, 196, 127);
+        font-weight: bold;
+       
+
+}
+.addSen:hover {
+    text-decoration: none;
+    color: rgb(127, 196, 127);
+    font-weight: bold;
+   
+
+
+}
+
+.addLogo{
+    width: 40%;
+    text-align: end;
+  
+}
+

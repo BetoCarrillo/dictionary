@@ -2,7 +2,7 @@ import React from 'react'
 
 function Vocabulary() {
   return (
-    <div></div>
+    <div>My Vocabulary</div>
   )
 }
 
