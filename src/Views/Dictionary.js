@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from 'react';
+import Random from '../Components /Random';
 
 /* import { useEffect } from 'react'; */
 import SearchBar from '../Components /SearchBar'
@@ -35,19 +36,22 @@ var requestOptions = {
                   
   useEffect(() => {
     fetchData();
-  }, [ search]);
+  }, [search]);
          
   return (
-<div>
-      <SearchBar setSearch={setSearch} />
+<div> <div className='buttonsBar'>
+   <SearchBar setSearch={setSearch} />
+    < Random setSearch={setSearch} fetchData={fetchData}  />
+</div>
+     
       <div>
          {(words && words.map((word, i) => {
           return <div key={i}>
             <WordCards   words={words} />
           </div>
          }))}
-       
-     </div> 
+      </div> 
+    
   
 </div>
     

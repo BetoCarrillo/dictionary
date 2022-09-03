@@ -1,13 +1,14 @@
 /* TO DO
-.more definitions component #same as searchbar
+.context
+.more definitions
 .replace use navigate in login
-.function to clean results
-.closing navbar in media
-.random word function
-.add lang
+.random word break
+.add lang 
+.usesearchparams with searched word in card&modal
+.NaN for no words
+.About
+.Animation buttons
 */
-
-
 
 import './App.css';
 import Dictionary from './Views/Dictionary';
@@ -17,7 +18,7 @@ import About from './Views/About';
 import NavBar from './Components /NavBar';
 import { Routes, Route, Link } from "react-router-dom";
 import NaN from './Views/NaN';
-import MoreDef from './Components /MoreDef';
+/* import MoreDef from './Components /MoreDef'; */
 
 
 function App() {
@@ -27,8 +28,8 @@ function App() {
         <NavBar/>
         <Routes>
           <Route path='/' element={<Dictionary />} />
+     {/*      <Route path='/:word' element={<MoreDef/>} /> */}
           <Route path='/vocabulary' element={<Vocabulary />} /> 
-          <Route path='/:word' element={<MoreDef/>} />
           <Route path='/login' element={<Login/>} /> 
           <Route path='/about' element={<About />} /> 
           <Route path='*' element={<NaN/>} /> 

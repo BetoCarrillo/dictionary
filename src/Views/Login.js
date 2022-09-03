@@ -7,7 +7,7 @@ function Login() {
 
   return (
     <div>Login</div> 
-/* {replace: true } INSIDE THE LOGIN FUNCTION*/
+/* {redirectLogin ("/", replace: true) } INSIDE THE LOGIN FUNCTION*/
   )
 }
 

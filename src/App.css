@@ -15,20 +15,15 @@
     
 }
 
-.addLink{
+.cardLogo{
     color: rgb(127, 196, 127);
 font-size: 2rem;
 
-
 }
 
-.addSen{
-    text-decoration: none;
-        color: rgb(127, 196, 127);
-        font-weight: bold;
+.logos{display: flex;justify-content: center; gap: 2rem; }
        
 
-}
 .addSen:hover {
     text-decoration: none;
     color: rgb(127, 196, 127);
@@ -38,9 +33,115 @@ font-size: 2rem;
 
 }
 
+
+
 .addLogo{
-    width: 40%;
-    text-align: end;
+    width: 20%;
+  
   
 }
 
+.infoLogo{
+    width: 20%;
+    cursor: pointer;
+
+}
+
+
+
+/* BUTTONS BAR */
+
+.buttonsBar{
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    padding-top: 8%;
+    background-color: rgb(0, 187, 255);
+
+}
+
+::placeholder{
+    color: black;
+    font-weight: bold;
+    padding-left: 4.8rem;
+    font-size: 24px;
+   
+  
+}
+
+@media only screen and (max-width: 768px){
+.buttonsBar {
+ flex-direction: column;  
+ gap: 3rem !important; 
+ align-items: center;
+}
+::placeholder {
+    padding-left: 2rem;
+
+
+}
+.SearchButton {
+width: 14rem !important;
+}
+
+.randonButton {
+width: 14rem !important;
+}
+}
+
+.randonButton{
+width: 20rem;
+    height: 3.5rem;
+    border-radius: 4rem;
+    background-color: rgb(244, 210, 41);
+        border: none;
+        box-shadow: 0px 0px 4px 0px black;
+        outline: none;
+        color: black;
+            font-size: 24px;
+            font-weight: bold;
+            
+            
+}
+
+.randonButton:hover {
+    border: none;
+    background-color: rgb(230, 198, 39);
+    box-shadow: 0px 0px 4px 0px black;
+        outline: none;
+        color: black;
+}
+
+.randonButton:focus {
+   border: none;
+    background-color: rgb(230, 198, 39);
+    box-shadow: 0px 0px 4px 0px black;
+    outline: none;
+    color: black;
+}
+
+.SearchButton{
+    height: 3.5rem;
+    width: 20rem;
+    border-radius: 4rem;
+    background-color: rgb(244, 210, 41);
+    border-color: rgb(140, 140, 0) !important;
+    box-shadow: 0px 0px 4px 0px black;
+    outline: none;
+    color: black;
+    font-weight: bold;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    
+   
+}
+
+.SearchButton:hover {
+    border-color: none;
+    background-color: rgb(230, 198, 39);
+    box-shadow: 0px 0px 4px 0px black;
+outline: none;
+
+}
