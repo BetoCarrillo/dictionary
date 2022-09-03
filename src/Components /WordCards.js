@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import MoreDef from './MoreDef';
+import '../styles/wordcards.css'
 
 
 
@@ -10,10 +11,11 @@ function WordCards(words ) {
 
 /*     console.log(word[0].hits.type) */
   return (
-     <div>
-          <Card style={{ width: '14rem' }}>
+    
+     <div className='wordcardsdiv'>
+          <Card className='cardstyle' style={{ width: '22rem' }}>
       <Card.Body>
-               <Card.Title>{words.words[0].hits[0].roms[0].headword}</Card.Title>
+              <Card.Title className='cardtitle'>{words.words[0].hits[0].roms[0].headword}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{words.words[0].hits[0].roms[0].wordclass}</Card.Subtitle>
               <Card.Text>
                  

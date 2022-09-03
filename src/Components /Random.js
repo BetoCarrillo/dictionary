@@ -18,7 +18,7 @@ function Random({fetchData, setSearch}) {
 
   
   return (
-      <div>         
+      <div className='move'>         
           <Button className='randonButton' onClick={fetchDataRandom}>
               Get random..</Button>
         

@@ -23,8 +23,9 @@ import NaN from './Views/NaN';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className='appbackground'>
+          <div className="App ">
+      <header className="App-header ">
         <NavBar/>
         <Routes>
           <Route path='/' element={<Dictionary />} />
@@ -36,6 +37,9 @@ function App() {
         </Routes>
       </header>
     </div>
+    </div>
+
+
   );
 }
 

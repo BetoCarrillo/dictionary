@@ -10,8 +10,12 @@ function SearchBar({ setSearch }) {
     }
   }
   return (
-       <input className='SearchButton' placeholder='Search words..' onKeyDown={handleEnter}
+<div className='move' >
+      <input className='SearchButton' placeholder='Search words..' onKeyDown={handleEnter}
     ></input>
+</div>
+
+   
 
    
   )

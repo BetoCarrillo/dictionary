@@ -39,11 +39,18 @@ var requestOptions = {
   }, [search]);
          
   return (
-<div> <div className='buttonsBar'>
+    <div>
+  <div className='divBar '>
+        <div className=' buttonsBar' >
+          
+          
    <SearchBar setSearch={setSearch} />
     < Random setSearch={setSearch} fetchData={fetchData}  />
 </div>
      
+  </div>
+  
+    
       <div>
          {(words && words.map((word, i) => {
           return <div key={i}>

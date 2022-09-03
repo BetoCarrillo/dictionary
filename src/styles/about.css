@@ -1,0 +1,32 @@
+.divAbout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10rem;
+
+
+}
+
+.aboutBrief{
+    
+
+}
+
+.aboutContact {
+    color: white;
+        font-size: 2rem;
+        font-weight: bold;
+        text-shadow: 0 0 2px black;
+}
+
+.breakLine{
+        background: 'lime';
+                height: '3px';
+}
+
+@media only screen and (max-width: 768px) {
+ /*    .aboutContact {
+            display: none;
+        } */
+}
+

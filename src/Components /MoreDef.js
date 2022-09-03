@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Button from 'react-bootstrap/esm/Button';
 import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
+import '../styles/modal.css'
 
 
 function MoreDef({words}) {
@@ -13,41 +14,33 @@ function MoreDef({words}) {
   
 
   let headword = words.words[0].hits[0].roms[0].headword_full
-  let cleanheadword = headword.replace("", " ").replace(/</g, " ").replace(/>/g, " ").replace(/span/g, " ").replace(/class/, " ").replace(/=/, "").replace(/=/g, " ").replace(/class/g, "~").replace(/title/g, " ").replace("/", " ").replace("/", " ").replace("/", " ").replace("/", " ").replace("/", " ").replace("/", " ").replace("/", " ").replace("/", " ").replace("/", " ").replace(/"/g, " ").replace(/acronym/g, " ")
+  let cleanheadword = headword.replace("", " ").replace(/</g, " ").replace(/>/g, " ").replace(/span/g, " ").replace("wordclass", " ").replace(/class/, " ").replace(/=/, "").replace(/=/g, " ").replace(/class/g, "~").replace(/title/g, " ").replace("/", " ").replace("/", " ").replace("/", " ").replace("/", " ").replace("/", " ").replace("/", " ").replace("/", " ").replace("/", " ").replace("/", " ").replace(/"/g, " ").replace(/acronym/g, " ")
 
   function replaceWithBr() {
     return cleanheadword.replace(/~/g, "<br />");
   }
 
-    
   return (
- /*    <div>
-      <Button state={words}  variant="outline-success" to={`${words.words[0].hits[0].roms[0].headword}`}>More info</Button>
-          
-    </div> */
 
     <div className='infoLogo'>
       <span  onClick={handleShow} class="material-symbols-outlined cardLogo">
 info
-</span>
-
- <Modal show={show} onHide={handleClose} centered>
-        <Modal.Header closeButton> {words.words[0].hits[0].roms[0].headword}
+      </span>
+      <div  >
+    <Modal show={show} onHide={handleClose} centered className='modalbackground '>
+        <Modal.Header closeButton className='modalbackgroundcolor modaltitle '> {words.words[0].hits[0].roms[0].headword}
         </Modal.Header>
-
-
-        <Modal.Body>
+        <Modal.Body className='modalbackgroundcolor modaltext'>
 <div>
             <div dangerouslySetInnerHTML={{ __html: replaceWithBr() }}
             />  
-           {`Lang: ${ words.words[0].lang }`}
-</div>
-
-
-      
-        
+           {`Lang ${ words.words[0].lang }`}
+</div>        
         </Modal.Body>
-      </Modal>
+      </Modal>     
+      </div>
+
+
     </div>
   )
 }
