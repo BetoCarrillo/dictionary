@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10rem;
+    gap: 12rem;
 
 
 }
@@ -11,22 +11,80 @@
     
 
 }
+.aboutLogos{
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem;
+    justify-content: center;
+}
+
+.gitLogoDiv{
+    border: 2px black solid ;
+    cursor: pointer;
+    padding: 1.2rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+    border-radius: 5rem;
+    background-color: rgb(144, 223, 252);
+}
+
+.gitLogoDiv:hover {
+    transform: translateY(-5px);
+}
+
+.linkLogoDiv{
+    border: 2px black solid;
+    cursor: pointer;
+    padding: 1.2rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+    border-radius: 5rem;
+    background-color: rgb(144, 223, 252);
+
+}
+.linkLogoDiv:hover {
+    transform: translateY(-5px);
+}
+
+.mailLogoDiv {
+    border: 2px black solid;
+    cursor: pointer;
+    padding: 1.2rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    border-radius: 5rem;
+    color: black;
+    background-color: rgb(144, 223, 252);
+
+}
+.material-symbols-outlined{
+    font-size: 55px;
+}
+.mailLogoDiv:hover {
+    transform: translateY(-5px);
+}
+
+.sizeMailLogo{
+height: 10px !important;
+}
+
+
 
 .aboutContact {
     color: white;
-        font-size: 2rem;
+        font-size: 3rem;
         font-weight: bold;
-        text-shadow: 0 0 2px black;
+        text-shadow: 0 0 2px  black;
 }
 
 .breakLine{
         background: 'lime';
-                height: '3px';
+        height: '3px';
 }
 
 @media only screen and (max-width: 768px) {
- /*    .aboutContact {
-            display: none;
+    /* .aboutContact {
+           display:none;
         } */
 }
 

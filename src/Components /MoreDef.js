@@ -36,7 +36,8 @@ info
             />  
            {`Lang ${ words.words[0].lang }`}
 </div>        
-        </Modal.Body>
+          </Modal.Body>
+          <Modal.Footer className='modalbackgroundcolor modalFooter' ></Modal.Footer>
       </Modal>     
       </div>
 

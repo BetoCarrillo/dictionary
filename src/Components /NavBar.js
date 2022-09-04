@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink } from "react-router-dom";
 import '../styles/navbar.css'
-import logo from "../styles/logo.png"
+import logo from "../styles/images/logo.png"
 
 
 function NavBar() {
@@ -50,7 +50,7 @@ function NavBar() {
            </NavLink>
          </li>
 <li>    <NavLink to="/vocabulary" onClick={handleLinkClick}>
-           Vocabulary
+           My Vocabulary
            </NavLink>
          </li> 
          <li>    <NavLink to="/login" onClick={handleLinkClick}>Login

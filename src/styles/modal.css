@@ -17,6 +17,11 @@ font-size:25px ;
 
 }
 
+.modalFooter{
+    border-top-style: hidden;
+   
+}
+
 .modaltext{
     font-size:18px ;
 }
@@ -33,7 +38,6 @@ font-size:25px ;
         font-weight: bold;
         font-size: 40px;
         text-align: center !important;
-    padding-left: 12rem;
     }
 
         .modaltext {

@@ -8,9 +8,13 @@ function Random({fetchData, setSearch}) {
     try {
             const response = await fetch(`https://random-word-api.herokuapp.com/word?lang=de`);
         const randomResult = await response.json();
-        console.log(randomResult)
-        setSearch(randomResult)
-      fetchData(setSearch)
+      console.log(randomResult)
+      setSearch(randomResult)
+ /*      (!fetchData ? fetchDataRandom() : setSearch(randomResult) ) */
+     if (!fetchData) {fetchDataRandom()
+     } 
+       /*  setSearch(randomResult) */
+   /*    fetchData(setSearch) */
     } catch (error) {
       console.log(error)
     } 

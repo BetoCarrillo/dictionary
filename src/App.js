@@ -3,11 +3,11 @@
 .more definitions
 .replace use navigate in login
 .random word break
+.dropdown menu definition remains
 .add lang 
 .usesearchparams with searched word in card&modal
 .NaN for no words
 .About
-.Animation buttons
 */
 
 import './App.css';
