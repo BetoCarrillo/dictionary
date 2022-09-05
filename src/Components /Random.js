@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Button from 'react-bootstrap/esm/Button';
+import { DictionaryContext } from '../Context/dictionarycontext';
 
-function Random({fetchData, setSearch}) {
+function Random({ setSearch }) {
+    const { fetchData, error, words} = useContext(DictionaryContext) 
 
     const fetchDataRandom = async () => {
     
@@ -9,9 +11,11 @@ function Random({fetchData, setSearch}) {
             const response = await fetch(`https://random-word-api.herokuapp.com/word?lang=de`);
         const randomResult = await response.json();
       console.log(randomResult)
-      setSearch(randomResult)
+      /* setSearch(randomResult)   */
+      await fetchData(randomResult)
+      console.log('error', error)
  /*      (!fetchData ? fetchDataRandom() : setSearch(randomResult) ) */
-     if (!fetchData) {fetchDataRandom()
+     if (error) {fetchDataRandom()
      } 
        /*  setSearch(randomResult) */
    /*    fetchData(setSearch) */
@@ -22,8 +26,8 @@ function Random({fetchData, setSearch}) {
 
   
   return (
-      <div className='move'>         
-          <Button className='randonButton' onClick={fetchDataRandom}>
+      <div>         
+          <Button className='randonButton move' onClick={fetchDataRandom}>
               Get random..</Button>
         
    

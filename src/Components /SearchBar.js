@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { DictionaryContext } from '../Context/dictionarycontext'
 
-function SearchBar({ setSearch }) {
+function SearchBar() {
 /*   const handleOnChange = (e) => { setSearch(e.target.value) }; */
-  
+    const {search, setSearch, words, setWords, fetchData} = useContext(DictionaryContext)
+
    const handleEnter = (event) => {
     if (event.key === 'Enter') {
-      setSearch(event.target.value)
-     
+      /* setSearch(event.target.value) */
+     fetchData(event.target.value)
     }
   }
   return (
-<div className='move' >
-      <input className='SearchButton' placeholder='Search words..' onKeyDown={handleEnter}
+<div >
+      <input className='SearchButton move' placeholder='Search words..' onKeyDown={handleEnter}
     ></input>
 </div>
 

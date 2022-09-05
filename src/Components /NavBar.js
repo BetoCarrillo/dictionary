@@ -5,7 +5,8 @@ import logo from "../styles/images/logo.png"
 
 
 function NavBar() {
-  let [isNavExpanded, setIsNavExpanded] = useState(false)
+  let [isNavExpanded, setIsNavExpanded] = useState(false);
+  
 
   const handleLinkClick = (e) => {
  setIsNavExpanded(!isNavExpanded);

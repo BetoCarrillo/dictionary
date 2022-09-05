@@ -66,26 +66,12 @@ color: rgb(93, 153, 93);
     transform: translateY(-5px);
 }
 
-@media only screen and (max-width: 768px){
-.buttonsBar {
- flex-direction: column;  
- gap: 3rem !important; 
- align-items: center;
-}
 
-.SearchButton {
-width: 14rem !important;
-}
-
-.randonButton {
-width: 14rem !important;
-}
-}
 
 .randonButton{
 width: 20rem;
-    height: 3.5rem;
-    border-radius: 4rem;
+height: 3.5rem;
+border-radius: 4rem;
     background-color: rgb(244, 210, 41);
         border: none;
         box-shadow: 0px 0px 4px 0px black;
@@ -143,4 +129,23 @@ outline: none;
 
 }
 
+/* MEDIA SCREEN */
+
+
+@media only screen and (max-width: 768px) {
+    .buttonsBar {
+        flex-direction: column;
+        gap: 3rem !important;
+        align-items: center;
+    }
+
+    .SearchButton {
+        width: 14rem !important;
+    }
+
+    .randonButton {
+        width: 14rem !important;
+    }
+
+}
 

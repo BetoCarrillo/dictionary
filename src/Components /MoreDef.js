@@ -23,12 +23,12 @@ function MoreDef({words}) {
   return (
 
     <div className='infoLogo'>
-      <span  onClick={handleShow} class="material-symbols-outlined cardLogo">
+      <span  onClick={handleShow} className="material-symbols-outlined cardLogo">
 info
       </span>
       <div  >
     <Modal show={show} onHide={handleClose} centered className='modalbackground '>
-        <Modal.Header closeButton className='modalbackgroundcolor modaltitle '> {words.words[0].hits[0].roms[0].headword}
+        <Modal.Header closeButton className='modalbackgroundcolor modaltitle '> {words.words[0].hits[0]?.roms[0].headword}
         </Modal.Header>
         <Modal.Body className='modalbackgroundcolor modaltext'>
 <div>
