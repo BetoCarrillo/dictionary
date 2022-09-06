@@ -8,10 +8,12 @@ export const DictionaryContextProvider = (props) => {
 
   const [search, setSearch] = useState("");
   const [words, setWords] = useState(null);
-const [error, setError] = useState(null)
+  const [refetch, setRefetch] = useState(false);
+
   const fetchData = async (mySearch) => {
-  const myHeaders = new Headers()
-  myHeaders.append("X-Secret", config)
+    setRefetch(false)
+    const myHeaders = new Headers();
+    myHeaders.append("X-Secret", config);
 
 var requestOptions = {
   method: 'GET',
@@ -22,27 +24,23 @@ var requestOptions = {
       const response = await fetch(`https://cab-cors-anywhere.herokuapp.com/api.pons.com/v1/dictionary?q=${mySearch}&l=deen&in=de&fm=1&ref=false&language=en`, requestOptions);
       console.log('response', response)
 
-      if (response.status === 204) {
-        setError("not found")
+      if (response.status !== 200) {
+        console.log("response status is not 200");
+        setRefetch(true);
       } else {
-        setError(null)
-         
         const result = await response.json();
-      /*   console.log(result[0].hits[0].roms[0].arabs) */
-      console.log(result)
-     setWords(result)
-      
-      /*       setSearch(result.results); */
+        console.log(result);
+        setWords(result);
+        
       }
-      
     } catch (error) {
-      /* console.log(error)
-      setError(error) */
+      console.log(error)
+     
     } 
   };    
                 
   return (
-    <DictionaryContext.Provider value = {{search, setSearch, words, setWords, fetchData, error}}>{props.children}</DictionaryContext.Provider>
+    <DictionaryContext.Provider value = {{search, setSearch, words, setWords, fetchData, refetch}}>{props.children}</DictionaryContext.Provider>
   );
 
 };

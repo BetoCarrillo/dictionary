@@ -7,7 +7,6 @@ import logo from "../styles/images/logo.png"
 function NavBar() {
   let [isNavExpanded, setIsNavExpanded] = useState(false);
   
-
   const handleLinkClick = (e) => {
  setIsNavExpanded(!isNavExpanded);
   }
@@ -37,7 +36,9 @@ function NavBar() {
           setIsNavExpanded(!isNavExpanded);
      }}>
        {
-          isNavExpanded ? <span class="material-symbols-outlined icon"> close </span> :  <span className="material-symbols-rounded icon"> menu </span>
+          isNavExpanded ? <span className="material-symbols-outlined icon"> close </span> :  <span class="material-symbols-outlined icon">
+menu
+</span>
         }
       </button>
       <div

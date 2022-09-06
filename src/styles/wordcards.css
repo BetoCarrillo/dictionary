@@ -2,7 +2,7 @@
 padding-top: 5rem;
 display: flex;
 justify-content: center;
-
+white-space: pre-wrap;
 }
 
 .cardstyle{
@@ -14,3 +14,5 @@ justify-content: center;
 .cardtitle{
     font-size: 35px !important;
 }
+
+

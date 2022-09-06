@@ -3,6 +3,7 @@
     height: 100vh;
 }
 
+
 .NaNLink{
 
     text-decoration: none;
@@ -19,25 +20,24 @@
 }
 
 .cardLogo{
-    color: rgb(93, 153, 93);
+    
 font-size: 2rem;
+color: rgb(93, 153, 93);
 
 }
 
-.logos{display: flex;justify-content: center; gap: 2rem; }
+.logos{display: flex;justify-content: center; gap: 1.5rem; }
        
 
 .addSen:hover {
     text-decoration: none;
-    color: rgb(93, 153, 93);
     font-weight: bold;
 
 }
 
 .addLogo{
     width: 20%;
-color: rgb(93, 153, 93);
-  
+
 }
 
 
@@ -66,9 +66,19 @@ color: rgb(93, 153, 93);
     transform: translateY(-5px);
 }
 
+/* body {
+    white-space: pre-wrap;
+    background-color: rgb(0, 187, 255);
 
+} */
 
-.randonButton{
+body{
+    height: 100vh;
+    background-color: rgb(0, 187, 255);
+    padding-bottom: 10%;
+}
+
+.randomButton{
 width: 20rem;
 height: 3.5rem;
 border-radius: 4rem;
@@ -84,7 +94,7 @@ border-radius: 4rem;
 }
 
 
-.randonButton:hover {
+.randomButton:hover {
     border: none;
     background-color: rgb(230, 198, 39);
     box-shadow: 0px 0px 4px 0px black;
@@ -93,7 +103,7 @@ border-radius: 4rem;
        
 }
 
-.randonButton:focus {
+.randomButton:focus {
    border: none;
     background-color: rgb(230, 198, 39);
     box-shadow: 0px 0px 4px 0px black;
@@ -143,7 +153,7 @@ outline: none;
         width: 14rem !important;
     }
 
-    .randonButton {
+    .randomButton {
         width: 14rem !important;
     }
 

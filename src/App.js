@@ -1,13 +1,11 @@
 /* TO DO
-.login / context spike
-.more definitions
+.second random word issue
+.login spike
 .replace use navigate in login
-.random word break
-.dropdown menu definition remains
 .usesearchparams (router spike2) with searched word in card&modal/Use search params NaN working
-.NaN for no words
-.About brief & links
-.add lang 
+.NaN for no words?
+.About brief
+.add lang?
 .theme?
 */
 
@@ -23,12 +21,12 @@ import { DictionaryContextProvider } from './Context/dictionarycontext';
 /* import MoreDef from './Components /MoreDef'; */
 
 
-function App() {
+function App(setIsNavExpanded) {
   return (
     <div className='appbackground'>
           <div className="App ">
       <header className="App-header ">
-          <NavBar />
+           <NavBar />
           <DictionaryContextProvider>
             <Routes>
           <Route path='/' element={<Dictionary />} />
