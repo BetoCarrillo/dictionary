@@ -91,7 +91,7 @@ z-index: 1000;
 
 
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 827px) {
     .navbarIcon {
             display: block;
         }
@@ -104,6 +104,7 @@ z-index: 1000;
             width: 100%;
             height: calc(100vh - 77px);
             background-color: rgb(172, 94, 172);
+          
             display: none;
           
         }

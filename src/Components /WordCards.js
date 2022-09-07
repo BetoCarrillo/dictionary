@@ -6,51 +6,36 @@ import '../styles/wordcards.css'
 
 
 
-function WordCards(words,target, cleandef ) {
-
-
-
-  let targets = words.words[0].hits[0]?.roms[0].arabs[0].translations;
-
-
-  /* console.log(words.words[0].hits[0].roms[0].arabs[0].translations) */
-
-  /*     console.log(word[0].hits.type) */
-
-  /*     <div>
-         {(words && words.map((word, i) => {
-          return <div key={i}>
-            <WordCards   words={words} />
-          </div>
-         }))}
-      </div> */
-  
-  const roms = words.words[0].hits[0]?.roms
-  console.log('roms', roms)
-  
+function WordCards(words,target, cleandef,) { 
+ 
+ 
+  let roms = words.words[0].hits[0].roms
+  console.log('roms', roms) 
+  let targets = roms ? words.words[0].hits[0]?.roms[0]?.arabs[0].translations : "";  
+  console.log('targets', targets)
+ 
   return (
     
     <div className='wordcardsdiv'>
     
           {<Card className='cardstyle' style={{ width: 'auto' }}>
       <Card.Body>
-              <Card.Title className='cardtitle'>{words.words[0].hits[0]?.roms ? words.words[0].hits[0].roms[0].headword :  words.words[0].hits[0].target}</Card.Title>
+              <Card.Title className='cardtitle'>{roms ? words.words[0].hits[0].roms[0].headword :  words.words[0].hits[0].target}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">{
             
-            words.words[0].hits[0]?.roms ? words.words[0].hits[0].roms[0].wordclass : ""
+            roms ? words.words[0].hits[0].roms[0].wordclass : ""
             
             }</Card.Subtitle>
-          <Card.Text>   
-            {(targets.map((target, i) => {
-                let alldef = target.target
+          <Card.Text>  
+
+            {targets !== "" ? (targets.map((target, i) => {
+              let alldef = target.target
               let cleandef = alldef.replace(/sth/g, "something ").replace(/(<([^>]+)>)/gi, "").replace(/#/g, "").replace(/&/g, "").replace(/[0-9]/g, "").replace(/;/g, "'");
               return (cleandef)
-            }).join("\n"))}
-            <div dangerouslySetInnerHTML={{__html: words.words[0].hits[0]?.roms ? cleandef: words.words[0].hits[0].source
-            }} />
+            }).join("\n")) : <div dangerouslySetInnerHTML={{ __html: words.words[0]?.hits[0].source }}/>}
               </Card.Text>
           <div className='logos'>
-            { <MoreDef words={words} />}
+            { <MoreDef words={words} roms={roms} />}
             <Card.Link href="#" className='addSen' ><span className="material-symbols-outlined cardLogo addLogo" >
 add_circle 
 </span> </Card.Link>

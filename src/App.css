@@ -2,6 +2,22 @@
     background-color: rgb(0, 187, 255) !important;
     height: 100vh;
 }
+.welcome{
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 20px;
+}
+.welcomenotlogin{
+padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 16px;
+}
 
 
 .NaNLink{
@@ -9,7 +25,13 @@
     text-decoration: none;
     text-align: center;
     font-size: 2rem;
-    color: rgb(0, 187, 255);
+    color:rgb(184, 242, 67);
+}
+
+.NaNLink:hover {
+
+   
+    color: rgb(172, 94, 172);
 }
 
 .NaNSen {
@@ -44,7 +66,7 @@ color: rgb(93, 153, 93);
 /* BUTTONS BAR */
 
 .divBar{
-    padding-top: 8%;
+    padding-top: 6%;
     background-color: rgb(0, 187, 255);
 }
 
@@ -127,8 +149,6 @@ border-radius: 4rem;
     border-bottom-style: hidden;
     text-align: center;
 font-size: 24px;
-    
-   
 }
 
 .SearchButton:hover {

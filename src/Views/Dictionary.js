@@ -1,13 +1,14 @@
 
 import { useContext, useEffect} from 'react';
 import Random from '../Components /Random';
-
 import SearchBar from '../Components /SearchBar'
 import WordCards from '../Components /WordCards';
+import { AuthContext } from '../Context/authcontext';
 import { DictionaryContext } from '../Context/dictionarycontext';
 
 
 function Dictionary() {
+  const {user} = useContext(AuthContext)
  
   const {search, setSearch, words, setWords, fetchData} = useContext(DictionaryContext)
 /*       
@@ -17,6 +18,9 @@ function Dictionary() {
          
   return (
     <div>
+      {user ? <div className='welcome'> <div> Welcome {user.name}! </div> <div> Now you can add words to your vocabulary </div></div> : ""} 
+
+
   <div className='divBar '>
         <div className=' buttonsBar' > 
    <SearchBar setSearch={setSearch} />
@@ -33,7 +37,9 @@ function Dictionary() {
          }))}
       </div> 
     
-  
+    {user ? "" : <div className='welcomenotlogin'>
+        Don't forget to login to add words to your vocabulary
+      </div>} 
 </div>
     
   )

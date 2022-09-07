@@ -1,0 +1,138 @@
+.login{padding-top: 5rem; 
+   }
+
+.LogDiv{
+    border: solid 2px black;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 1rem;
+    margin-left: 50%;
+    margin-right: 50%;
+    margin: auto;
+    width: 50%;
+    align-items: center;
+    padding-bottom: 1.5rem;
+    padding-top: 1rem;
+    gap: 1rem;
+}
+
+.logDiv2{
+    background-color: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+
+}
+.logInIcon{
+    font-size: 14px !important;
+}
+.logOutIcon{
+    font-size: 14px !important;
+}
+
+
+.logTitle{
+   font-size: 40px;
+   font-weight: bold;
+   margin: 0;
+}
+
+.logText{
+    font-size: 17px;
+}
+
+
+.emailAddInput{
+    border: solid 0.5px black !important;
+    height: 2.5rem;
+    width: 70%;
+    border-radius: 0.3rem;
+    background-color: rgb(221, 220, 220);
+    outline: none;
+    color: black;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    font-size: 14px;
+}
+
+.passInput {
+    border: solid 0.5px black !important;
+    height: 2.5rem;
+    width: 70%;
+    border-radius: 0.3rem;
+    background-color: rgb(221, 220, 220);
+    outline: none;
+    color: black;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    font-size: 14px;
+}
+
+.emailAddInput::placeholder{
+    color: black;
+    font-weight: 1;
+    opacity: 50%;
+    padding-left: 15px;
+
+}
+.passInput::placeholder {
+    color: black;
+    font-weight: 1;
+    opacity: 50%;
+    padding-left: 15px;
+
+}
+.regLink {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50%;
+    margin-right: 50%;
+    margin: auto;
+    width: 50%;
+    align-items: center;
+    padding-top: 0.5rem;
+}
+
+/* .regLink{
+margin-left: 50%;
+    margin-right: 50%;
+    margin: auto;
+    width: 15%;
+} */
+
+.logBut {
+    height: 2rem;
+    width: 8rem;
+    border: solid 2px black !important;
+    border-radius: 1rem;
+    background-color: rgb(244, 210, 41);
+    outline: none;
+    color: black;
+    font-weight: bold;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    text-align: center;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 700px) {
+.LogDiv {
+
+        width: 80%;
+    
+    }
+.passInput {
+    width: 50%;
+}
+.emailAddInput {
+    width: 50%;
+}
+      
+}

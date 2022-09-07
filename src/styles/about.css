@@ -44,11 +44,11 @@ margin-top: 30px;
     order: 0;
     border: 2px black solid ;
     cursor: pointer;
-    padding: 0.8rem;
+    padding: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
     border-radius: 5rem;
-    background-color: rgb(144, 223, 252);
+    background-color: white;
     position: relative;
 
 
@@ -92,11 +92,11 @@ color: rgb(172, 94, 172);}
 .linkLogoDiv{
     border: 2px black solid;
     cursor: pointer;
-    padding: 0.8rem;
+    padding: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
     border-radius: 5rem;
-    background-color: rgb(144, 223, 252);
+    background-color: white;
 
 }
 .linkLogoDiv:hover {
@@ -157,13 +157,13 @@ color: rgb(172, 94, 172);}
 .mailLogoDiv {
     border: 2px black solid;
     cursor: pointer;
-    padding: 0.8rem;
+    padding: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
     padding-bottom: 0.4rem !important;
     border-radius: 5rem;
     color: black;
-    background-color: rgb(144, 223, 252);
+background-color: white;
 
 }
 .material-symbols-outlined {
@@ -198,8 +198,8 @@ height: 10px !important;
 }
 
 @media only screen and (max-width: 768px) {
-    /* .aboutContact {
-           display:none;
-        } */
+    .aboutContact {
+           font-size: 20px;
+        } 
 }
 

@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { NavLink } from "react-router-dom";
 import '../styles/navbar.css'
 import logo from "../styles/images/logo.png"
+import { AuthContext } from '../Context/authcontext';
 
 
 function NavBar() {
@@ -10,6 +11,7 @@ function NavBar() {
   const handleLinkClick = (e) => {
  setIsNavExpanded(!isNavExpanded);
   }
+  const {user} = useContext(AuthContext)
 
   return (
    
@@ -36,7 +38,7 @@ function NavBar() {
           setIsNavExpanded(!isNavExpanded);
      }}>
        {
-          isNavExpanded ? <span className="material-symbols-outlined icon"> close </span> :  <span class="material-symbols-outlined icon">
+          isNavExpanded ? <span className="material-symbols-outlined icon"> close </span> :  <span className="material-symbols-outlined icon">
 menu
 </span>
         }
@@ -51,12 +53,12 @@ menu
              Words
            </NavLink>
          </li>
-<li>    <NavLink to="/vocabulary" onClick={handleLinkClick}>
+            {user ? <li><NavLink to="/vocabulary" onClick={handleLinkClick}>
            My Vocabulary
-           </NavLink>
-         </li> 
-         <li>    <NavLink to="/login" onClick={handleLinkClick}>Login
-           </NavLink>
+           </NavLink>  
+         </li> : ""} 
+         <li>  <NavLink to="/login" onClick={handleLinkClick}>Log
+           </NavLink> 
          </li>
          <li>    <NavLink to="/about" onClick={handleLinkClick}>
            About
