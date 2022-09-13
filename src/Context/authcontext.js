@@ -2,6 +2,7 @@
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../firebaseconfig.js";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail, updateProfile} from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 export const AuthContext =  createContext();
 
@@ -32,8 +33,16 @@ export const AuthContextProvider = (props) => {
     // ..
   });
   }
-
+ const redirectLogin = useNavigate();
   const userLogIn = (email, password) => {
+    
+/* if (user) {
+  redirectLogin("/loginfailed", { replace: true })
+} else {
+  (redirectLogin("/", { replace: true }));
+} */
+/* 
+      !userLogIn ? redirectLogin("/loginfailed", { replace: true }) : (redirectLogin("/", { replace: true })); */
     signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
@@ -47,6 +56,7 @@ export const AuthContextProvider = (props) => {
     const errorCode = error.code;
     const errorMessage = error.message;
     console.log("error", error)
+  
   });
   }
 

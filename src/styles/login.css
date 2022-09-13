@@ -81,12 +81,14 @@
     cursor: pointer;
     color: black;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 20px;
+    color: rgb(184, 242, 67);
+    text-decoration: none;
 }
 
 .regLink:hover {
-    color: rgb(184, 242, 67);
  
+color: rgb(172, 94, 172);
 }
 
 /* .regLink{
@@ -126,6 +128,14 @@ cursor: pointer;
  
 }
 
+.tryAgainLink{
+    align-self: center;
+    text-decoration: none;
+    color:rgb(184, 242, 67); 
+}
+.tryAgainLink:hover {color: rgb(172, 94, 172); }
+
+
 @media screen and (max-width: 700px) {
 .LogDiv {
 
@@ -137,6 +147,10 @@ cursor: pointer;
 }
 .emailAddInput {
     width: 50%;
+}
+
+.regLink {
+    font-size: 16px;
 }
       
 }

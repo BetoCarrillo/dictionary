@@ -4,6 +4,7 @@ import { AuthContext } from '../Context/authcontext'
 import '../styles/login.css'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
+import { auth } from '../firebaseconfig';
 
 
 const Login = () => {
@@ -20,15 +21,16 @@ const Login = () => {
     setPassword(e.target.value);
   }
 
-  const handleUserLogIn = ()=>{
+  const handleUserLogIn = () => {
     userLogIn(email, password);
-    if (!userLogIn) {
-        (redirectLogin("/", { replace: true}));
-    } else {
-       redirectLogin("loginfailed");
-      
-    }
+  /*   auth !==  null ? redirectLogin("/loginfailed", { replace: true }) : (redirectLogin("/", { replace: true })); */
   }
+/*     if (userLogIn) {
+      redirectLogin("/loginfailed", { replace: true });  
+    }  else if(!userLogIn ) {
+      (redirectLogin("/", { replace: true}));
+    }
+  } */
  
   const handleUserLogOut = ()=>{
     userLogOut();    
@@ -40,13 +42,13 @@ const Login = () => {
 
    const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
-      Email
+      Valid email
     </Tooltip>
    );
   
    const secondRenderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
-      Password
+      6 characters password
     </Tooltip>
   );
   
@@ -73,13 +75,13 @@ const Login = () => {
       <input id='password' className="logInput" type="text" name="mail"  placeholder='Password ' value={password} onChange={handlePasswordChange}></input>
         </OverlayTrigger> : ""}
      {/*    <p onClick={handleResetPass}>Forgot your password?</p> */}
-         {user ? (<button className='logBut' type="button" onClick={handleUserLogOut}><span className="material-symbols-outlined logOutIcon">
-logout&nbsp;
-</span>
-Logout</button>) :
-          (<button className='logBut move' type="button" onClick={handleUserLogIn}><span className="material-symbols-outlined logInIcon "> 
-login
-            &nbsp;</span>Login</button>)}
+         {user ? (<button className='logBut' type="button" onClick={handleUserLogOut}>
+          Logout &nbsp; &nbsp;<span className="material-symbols-outlined logOutIcon"> 
+logout 
+            </span></button>) :
+          (<button className='logBut move' type="button" onClick={handleUserLogIn}>Login &nbsp; &nbsp;<span className="material-symbols-outlined logInIcon "> 
+login 
+            </span> </button>)}
         
       </div>
   
