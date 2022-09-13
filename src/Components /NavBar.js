@@ -57,7 +57,7 @@ menu
            My Vocabulary
            </NavLink>  
          </li> : ""} 
-         <li>  <NavLink to="/login" onClick={handleLinkClick}>Log
+            <li>  <NavLink to="/login" onClick={handleLinkClick}>{user ? "Logout" : "Login"}
            </NavLink> 
          </li>
          <li>    <NavLink to="/about" onClick={handleLinkClick}>

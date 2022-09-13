@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
-import config from "../config";
+import { useState } from 'react';
+import config from '../config';
 
-function useMyFetch(url) {
-const [search, setSearch] = useState("");
+const useFetch = (url) => {
+    
+const [mySearch, setMySearch] = useState("");
   const [words, setWords] = useState(null);
   const [refetch, setRefetch] = useState(false);
 
@@ -17,7 +18,7 @@ var requestOptions = {
 };
            
     try {
-      const response = await fetch((url), requestOptions);
+      const response = await fetch(url, requestOptions);
       console.log('response', response)
 
       if (response.status !== 200) {
@@ -33,13 +34,8 @@ var requestOptions = {
       console.log(error)
      
     } 
-    }
-    useEffect(() => {
-      fetchData()
-    }, [])
-    
-    
-    return { search, setSearch, words, setWords, fetchData, refetch }
-} 
-  
-export default useMyFetch
+    };    
+    return {mySearch, words, refetch, fetchData, setMySearch }
+}
+
+export default useFetch; 

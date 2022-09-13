@@ -1,13 +1,3 @@
-/* TO DO
-.custom fetch hook. OTT
-.review filter code. OTT
-.Register view
-.usesearchparams (router spike2) with searched word in card&modal/Use search params NaN working
-.About brief
-.add lang?
-.theme?
-.add a word/sentence
-*/
 
 import './App.css';
 import Dictionary from './Views/Dictionary';
@@ -20,6 +10,8 @@ import NaN from './Views/NaN';
 import { DictionaryContextProvider } from './Context/dictionarycontext';
 import { AuthContextProvider } from './Context/authcontext';
 import ProtectedRoute from './Components /ProtectedRoute';
+import Registration from './Views/Registration';
+import NaNLogIn from './Views/NaNLogIn';
 /* import MoreDef from './Components /MoreDef'; */
 
 
@@ -38,8 +30,10 @@ function App({words}) {
                   <ProtectedRoute>
                     <Vocabulary />
                   </ProtectedRoute>} /> 
-          <Route path='/login' element={<Login/>} /> 
-          <Route path='/about' element={<About />} /> 
+                <Route path='/login' element={<Login />} /> 
+                 <Route path='/register' element={<Registration/>} /> 
+                <Route path='/about' element={<About />} /> 
+                 <Route path='/loginfailed' element={<NaNLogIn/>} /> 
           <Route path='*' element={<NaN/>} /> 
         </Routes>
           </DictionaryContextProvider>

@@ -19,6 +19,13 @@ padding-top: 3rem;
     font-size: 16px;
 }
 
+.loginLink{
+text-decoration: none;
+}
+.loginLink:hover{
+    color: rgb(172, 94, 172);
+    text-decoration: none;
+}
 
 .NaNLink{
 
@@ -43,8 +50,10 @@ padding-top: 3rem;
 
 .cardLogo{
     
-font-size: 2rem;
+font-size: 2.3rem !important;
 color: rgb(93, 153, 93);
+font-variation-settings:
+        'FILL' 0 !important;
 
 }
 
@@ -59,6 +68,8 @@ color: rgb(93, 153, 93);
 
 .addLogo{
     width: 20%;
+    font-variation-settings:
+            'FILL' 0 !important;
 
 }
 
@@ -103,7 +114,7 @@ body{
 .randomButton{
 width: 20rem;
 height: 3.5rem;
-border-radius: 4rem;
+border-radius: 2rem;
     background-color: rgb(244, 210, 41);
         border: none;
         box-shadow: 0px 0px 4px 0px black;

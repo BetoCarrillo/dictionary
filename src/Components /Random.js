@@ -23,7 +23,7 @@ function Random({}) {
   };    
 
   useEffect(() => {
-    console.log("refetch changed");
+/*     console.log("refetch changed"); */
     
     if (refetch) {
       console.log("refetching");

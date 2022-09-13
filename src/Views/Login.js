@@ -1,31 +1,43 @@
-import React, { useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useContext, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../Context/authcontext'
 import '../styles/login.css'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 
-function Login() {
+
+const Login = () => {
+  const { user, setUser, userLogIn, userLogOut, resetPass } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const redirectLogin = useNavigate();
-  const { user, setUser } = useContext(AuthContext)
-  
-  const changeClass = () => {
-    
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
   }
 
-  const userLogin = ()=>{
-    setUser({ name: "beto" })
-    changeClass()
-    console.log(user)
-      (redirectLogin("/", {replace: true} ))
-    
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
   }
-  const userLogout = ()=>{
-    setUser(null)
-    console.log(user)
-    ( {replace: true} )
-    
+
+  const handleUserLogIn = ()=>{
+    userLogIn(email, password);
+    if (!userLogIn) {
+        (redirectLogin("/", { replace: true}));
+    } else {
+       redirectLogin("loginfailed");
+      
+    }
   }
+ 
+  const handleUserLogOut = ()=>{
+    userLogOut();    
+  }
+
+/*   const handleResetPass = () => {
+    resetPass();
+   } */
+
    const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
       Email
@@ -37,7 +49,7 @@ function Login() {
       Password
     </Tooltip>
   );
-
+  
   return (
     <div className="login" >
       <div className={!user ? 'LogDiv' : 'logDiv2'}>
@@ -50,7 +62,7 @@ function Login() {
       delay={{ show: 250, hide: 400 }}
       overlay={renderTooltip}
     >
-      <input className="emailAddInput" type="input" name="mail"  placeholder='Email address '></input>
+      <input id='email' className="logInput" type="text" name="mail"  placeholder='Email address ' value={email} onChange={handleEmailChange}></input>
         </OverlayTrigger> : ""}
 
          {   !user ?  <OverlayTrigger
@@ -58,17 +70,20 @@ function Login() {
       delay={{ show: 250, hide: 400 }}
       overlay={secondRenderTooltip}
     >
-      <input className="passInput" type="input" name="mail"  placeholder='Password '></input>
-          </OverlayTrigger> : ""}
-         {user ? (<button className='logBut' type="button" onClick={userLogout}><span class="material-symbols-outlined logOutIcon">
-logout
+      <input id='password' className="logInput" type="text" name="mail"  placeholder='Password ' value={password} onChange={handlePasswordChange}></input>
+        </OverlayTrigger> : ""}
+     {/*    <p onClick={handleResetPass}>Forgot your password?</p> */}
+         {user ? (<button className='logBut' type="button" onClick={handleUserLogOut}><span className="material-symbols-outlined logOutIcon">
+logout&nbsp;
 </span>
 Logout</button>) :
-          (<button className='logBut' type="button" onClick={userLogin}><span class="material-symbols-outlined logInIcon"> 
+          (<button className='logBut move' type="button" onClick={handleUserLogIn}><span className="material-symbols-outlined logInIcon "> 
 login
-</span>Login</button>)}
+            &nbsp;</span>Login</button>)}
+        
       </div>
-      { !user ? <p className='regLink'>Not a member yet? Click to register </p> : ""}
+  
+      { !user ? <Link to="/register" className='regLink move'>Not a member yet? Click to register </Link> : ""}
      
     </div> 
 
