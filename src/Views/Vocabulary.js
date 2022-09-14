@@ -64,6 +64,7 @@ function Vocabulary() {
       <div className="vocabTitleDiv">
         <h1 className="vocabTitleText">Vocabulary</h1>
       </div>
+
       <div className="vocabTableDiv">
         <table className="vocabTable">
           <thead className="vocabTableTitle">
@@ -105,6 +106,7 @@ function Vocabulary() {
               </table>
             </div>
           ))}
+
         <div className="inputDiv">
           <input
             className="sentenceInput"
