@@ -3,7 +3,7 @@ import React from 'react'
 function NaN() {
     return (
       
-        <div>
+        <div className='NaNDiv'>
             <div className='NaNSen'>
                 Don't waste time!
             </div>

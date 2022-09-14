@@ -8,6 +8,7 @@ export const AuthContext =  createContext();
 
 export const AuthContextProvider = (props) => {
   const [user, setUser] = useState(null);
+   const [error, setError] = useState(null);
   
 
   const registerNewUser = (email, password) => {
@@ -15,7 +16,7 @@ export const AuthContextProvider = (props) => {
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    console.log("user", user)
+   /*  console.log("user", user) */
     // ...
 /*     updateProfile(auth.currentUser, {
 
@@ -30,32 +31,28 @@ export const AuthContextProvider = (props) => {
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+    
     // ..
   });
   }
  const redirectLogin = useNavigate();
   const userLogIn = (email, password) => {
-    
-/* if (user) {
-  redirectLogin("/loginfailed", { replace: true })
-} else {
-  (redirectLogin("/", { replace: true }));
-} */
-/* 
-      !userLogIn ? redirectLogin("/loginfailed", { replace: true }) : (redirectLogin("/", { replace: true })); */
+
     signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    console.log("user", user)
+  /*   console.log("user", user) */
     setUser(user)
     
     // ...
   })
-  .catch((error) => {
+      .catch((error) => {
+    redirectLogin("/loginfailed", { replace: true })
     const errorCode = error.code;
     const errorMessage = error.message;
-    console.log("error", error)
+ /*    console.log("error", error) */
+    setError(error)
   
   });
   }
@@ -65,7 +62,7 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
-    console.log("user", user)
+  /*   console.log("user", user) */
     setUser(user)
     // ...
   } else {
@@ -82,7 +79,8 @@ onAuthStateChanged(auth, (user) => {
       setUser(null);
 }).catch((error) => {
   // An error happened.
-  console.log("error", error);
+  /*   console.log("error", error); */
+  setError(error)
 });
     
   }
@@ -90,14 +88,15 @@ onAuthStateChanged(auth, (user) => {
   const resetPass = (email) => {
 sendPasswordResetEmail(auth, email)
   .then(() => {
-    console.log("Password reset email sent")
-    // Password reset email sent!
+/*     console.log("Password reset email sent")
+ */    // Password reset email sent!
     // ..
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    console.log("error", error);
+    /* console.log("error", error); */
+    setError(error)
     // ..
   });
 
@@ -111,7 +110,7 @@ sendPasswordResetEmail(auth, email)
 
   
   return (
-    <AuthContext.Provider value={{ user, setUser, registerNewUser, userLogIn, userLogOut, resetPass}}>
+    <AuthContext.Provider value={{ user, setUser, registerNewUser, userLogIn, userLogOut, resetPass, error, setError}}>
       {props.children}
     </AuthContext.Provider>
   );

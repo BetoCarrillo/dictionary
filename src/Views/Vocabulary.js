@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/vocab.css';
 import { useState, useContext, useEffect } from "react";
 import { AuthContext } from '../Context/authcontext';
-import { collection, addDoc, getDocs, query, where, onSnapshot } from "firebase/firestore"; 
+import { collection, addDoc, query, onSnapshot, orderBy } from "firebase/firestore"; 
 import {db} from '../firebaseconfig';
 
 function Vocabulary() {
@@ -22,14 +22,14 @@ function Vocabulary() {
       user: user.email,
     };
     try {
-  const docRef = await addDoc(collection(db, "users"),commentObj);
+  const docRef = await addDoc(collection(db, "users" + user.uid),commentObj);
   console.log("Document written with ID: ", docRef.id);
 } catch (e) {
   console.error("Error adding document: ", e);
     }
   };
   const readComments = async () => {
-const q = query(collection(db, "users"));
+const q = query(collection(db, "users" + user.uid), orderBy("text", "desc"));
 const unsubscribe = onSnapshot(q, (querySnapshot) => {
   const comments = [];
   querySnapshot.forEach((doc) => {
@@ -49,12 +49,11 @@ const unsubscribe = onSnapshot(q, (querySnapshot) => {
 
         {commentDisplay && commentDisplay.map((text, i) => (
 <div key={i}>
-            <p>{text.text}</p>     
-            <p> {text.date}</p>   
+            <p>{text.text}</p>      
 </div>
         ))}
             <input type="text" value={comment} onChange={handleCommentChange}></input>
-            <button onClick={handleSendComment}>Send comment</button>
+            <button onClick={handleSendComment}>Now try a sentence!</button>
             
       </div>
 

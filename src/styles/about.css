@@ -3,8 +3,6 @@
     flex-direction: column;
     align-items: center;
     gap: 12rem;
-
-
 }
 
 
@@ -17,9 +15,12 @@
 }
 
 .aboutBrief{
-    
-
+    padding-top: 3rem;
+    color: white;
+    font-size: 1.3rem;
+    width: 60%;
 }
+
 .botBreakLine{
 margin-top: 30px;
 
@@ -184,12 +185,12 @@ height: 10px !important;
 }
 
 
-
 .aboutContact {
     color: white;
-        font-size: 3rem;
-        font-weight: bold;
-        text-shadow: 0 0 2px  black;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0 0 2px  black;
+    margin-left: 30%;
 }
 
 .breakLine{
@@ -197,9 +198,4 @@ height: 10px !important;
         height: '3px';
 }
 
-@media only screen and (max-width: 768px) {
-    .aboutContact {
-           font-size: 20px;
-        } 
-}
 

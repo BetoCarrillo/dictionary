@@ -17,11 +17,14 @@ function About() {
           setIsNavExpanded ? "divAbout hidden " : "shown divAbout"
         } */>
   <div className='aboutBrief'>
-        <p>Project 3 brief</p>
+        <p className='textBrief'>This website was developed as part of Project 3 of the Code Academy Berlin program. The project consisted in building a free of choice Web Progressive App using Firebase.</p>
+        <p>
+          
+        </p>
   </div>
       <div>
  
-        <p className='aboutContact'>Get in contact!</p>
+        <p className='aboutContact'>Contact</p>
         <hr style={{ color: 'white', backgroundColor: 'white', height: 2, borderColor: 'white' }} />
         <div className='aboutLogos '>
           <div>

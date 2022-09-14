@@ -8,10 +8,12 @@ import { auth } from '../firebaseconfig';
 
 
 const Login = () => {
-  const { user, setUser, userLogIn, userLogOut, resetPass } = useContext(AuthContext);
+  const { user, setUser, userLogIn, userLogOut, resetPass, error } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const redirectLogin = useNavigate();
+  const [passwordType, setPasswordType] = useState("password");
+
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -19,18 +21,24 @@ const Login = () => {
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
+
   }
+
+    const togglePassword =()=>{
+      if(passwordType==="password")
+      {
+       setPasswordType("text")
+       return;
+      }
+      setPasswordType("password")
+    }
+  
 
   const handleUserLogIn = () => {
     userLogIn(email, password);
-  /*   auth !==  null ? redirectLogin("/loginfailed", { replace: true }) : (redirectLogin("/", { replace: true })); */
+    (redirectLogin("/", { replace: true }));
+
   }
-/*     if (userLogIn) {
-      redirectLogin("/loginfailed", { replace: true });  
-    }  else if(!userLogIn ) {
-      (redirectLogin("/", { replace: true}));
-    }
-  } */
  
   const handleUserLogOut = ()=>{
     userLogOut();    
@@ -57,29 +65,54 @@ const Login = () => {
       <div className={!user ? 'LogDiv' : 'logDiv2'}>
        { !user ? <p className='logTitle'> Login</p> : ""}
         {!user ? <p className='logText'>Login to access your personalized vocabulary</p> : ""}
-      
 
+        <div className='mailinputDiv'>
+     
    {   !user ?    <OverlayTrigger
       placement="right"
       delay={{ show: 250, hide: 400 }}
       overlay={renderTooltip}
     >
       <input id='email' className="logInput" type="text" name="mail"  placeholder='Email address ' value={email} onChange={handleEmailChange}></input>
-        </OverlayTrigger> : ""}
+        </OverlayTrigger> : ""}     
+        </div>
+      
 
-         {   !user ?  <OverlayTrigger
+<div>
+        {   !user ?  <OverlayTrigger
       placement="right"
       delay={{ show: 250, hide: 400 }}
       overlay={secondRenderTooltip}
     >
-      <input id='password' className="logInput" type="text" name="mail"  placeholder='Password ' value={password} onChange={handlePasswordChange}></input>
+      <input id='password' className="logInput" type={passwordType} name="mail"  placeholder='Password ' value={password} onChange={handlePasswordChange}></input>
         </OverlayTrigger> : ""}
-     {/*    <p onClick={handleResetPass}>Forgot your password?</p> */}
-         {user ? (<button className='logBut' type="button" onClick={handleUserLogOut}>
-          Logout &nbsp; &nbsp;<span className="material-symbols-outlined logOutIcon"> 
+        {/*    <p onClick={handleResetPass}>Forgot your password?</p> */}
+
+   
+
+
+        <div className='showBut'>
+         {   !user ? <p className="showpasswordtext" onClick={togglePassword}><span className="material-symbols-outlined visibility ">
+visibility
+</span></p> : ""}
+        </div></div>
+
+
+
+        {user ? (<div className='logOutDiv'>
+          
+          <p className='logOutTitle'>bis später!</p>
+          <button className='logButOut' type="button" onClick={handleUserLogOut}>
+         <span className="material-symbols-outlined logOutIcon"> 
 logout 
-            </span></button>) :
-          (<button className='logBut move' type="button" onClick={handleUserLogIn}>Login &nbsp; &nbsp;<span className="material-symbols-outlined logInIcon "> 
+            </span></button>
+        </div>
+          
+          
+          
+          ) :
+          ( 
+            <button className='logBut move' type="button" onClick={handleUserLogIn}>Login &nbsp; &nbsp;<span className="material-symbols-outlined logInIcon "> 
 login 
             </span> </button>)}
         

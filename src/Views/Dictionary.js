@@ -13,15 +13,22 @@ function Dictionary() {
 
   const {user} = useContext(AuthContext)
  
-  const {search, setSearch, words, setWords, fetchData} = useContext(DictionaryContext)
+  const {search, setSearch, words, setWords, fetchData, loader, setLoader, setError, error} = useContext(DictionaryContext)
 /*       
   useEffect(() => {
     fetchData();
   }, [search]); */
+
+
+ 
         
   return (
     <div>
-      {user ? <div className='welcome'> <div> Welcome {user.email}! </div><div> Now you can add words to your vocabulary </div></div> : ""} 
+      
+ 
+      
+  
+      {user ? <div className='welcome'> <div> Welcome {user.email}! </div><div className='welcometwo'> You can add words to your vocabulary </div></div> : ""} 
 
 
   <div className='divBar '>
@@ -33,15 +40,20 @@ function Dictionary() {
   </div>
     
       <div>
-         {(words && words.map((word, i) => {
+         {!loader ?(words && words.map((word, i) => {
           return <div key={i}>
             <WordCards   words={words} />
           </div>
-         }))}
+         })): (
+        <p className='loader'><span className="material-symbols-outlined">
+auto_stories
+</span>
+</p>
+      )}
       </div> 
 
     
-    {user ? "" : <div className='welcomenotlogin'> <span>  Don't forget to <Link className='loginLink' to="/login">login </Link> to add words to your vocabulary</span> 
+    {user ? "" : <div className='welcomenotlogin'> <span>  Don't forget to <Link className='loginLink' to="/login"> login </Link> to add words to your vocabulary</span> 
       
       </div>} 
 </div>
