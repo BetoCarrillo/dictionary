@@ -1,17 +1,185 @@
 .vocabDiv{
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
 }
 
-.vocabTitle{display: none; font-size: 22px; color: white;}
+.vocabTitleDiv{display: none;}
+
+.vocabTitleText {
+    display: none;
+    
+  }
+
+.vocabTableDiv{
+    align-self: center !important;
+    padding-top: 4rem;
+}
+  
+.vocabTable{
+width: 60rem;
+
+}
+
+.vocabTableTitle{
+    color: white;
+    
+   
+    
+}
+
+
+.vocabFirstWord{
+width: 31.9% ;
+background-color: rgb(172, 94, 172);
+text-align: center;
+
+}
+.vocabFirstDef {
+    width: 32%;
+    background-color: rgb(172, 94, 172);
+    text-align: center;
+
+}
+.vocabFirstCom {
+    width: 31.3%;
+    background-color: rgb(172, 94, 172);
+    text-align: center;
+
+}
+
+.vocabWords{
+    border-bottom: rgb(0, 187, 255) 0.1px solid;
+    
+width: 33%;
+background-color: white;
+
+}
+
+.vocabDef{
+    border-bottom: rgb(0, 187, 255) 0.1px solid;
+width: 33%;
+background-color: white;
+}
+
+.vocabCom{
+    border-bottom: rgb(0, 187, 255) 0.1px solid;
+width: 33%;
+background-color: white;
+}
+
+.vocabAdd{
+width: 0%;
+display: flex;
+gap: 3px;
+
+}
+
+.addsymbol{
+ 
+    padding-top: 5px;
+    font-size: 1.3rem !important;
+    cursor: pointer;
+    font-variation-settings:
+        'FILL' 1 !important
+        
+}
+
+.deletesymbol{
+    
+        padding-top: 5px;
+        font-size: 1.3rem !important;
+        cursor: pointer;
+        font-variation-settings:
+            'FILL' 1 !important
+}
+
+.inputDiv{
+   padding-top: 2rem; 
+ 
+}
+.sentenceInput{
+width: 20rem;
+height: 2rem;
+border-radius: 4rem;
+background-color: rgb(244, 210, 41);
+        border-color: rgb(140, 140, 0) !important;
+        box-shadow: 0px 0px 4px 0px black;
+        outline: none;
+        color: black;
+        font-weight: bold;
+        border-top-style: hidden;
+        border-right-style: hidden;
+        border-left-style: hidden;
+        border-bottom-style: hidden;
+        text-align: center;
+        font-size: 16px;
+  
+}
 
 @media screen and (max-width: 827px) {
-.vocabTitle {
-    display: block;
-        font-size: 44px;
-        color: white;
-        font-weight: bold;
+.vocabTitleDiv {
+    display: flex;
+    align-self: center !important;
     }
+        .vocabTitleText {
+            display: flex;
+        font-size: 44px;
+        font-weight: bold;
+        color: white;
+        }
 
+.vocabTableDiv {
+    align-self: center !important;
+    padding-top: 2rem;
+    
+}
+
+.vocabTable {
+    width: 22rem;
+}
+
+.vocabFirstWord {
+    font-size: 16px;
+    width: 29%;
+    text-align: start;
+
+}
+
+.vocabFirstDef {
+    font-size: 16px;
+    width: 29%;
+    text-align: start;
+
+}
+
+.vocabFirstCom {
+    font-size: 16px;
+    width: 29%;
+    text-align: start;
+
+}
+
+.vocabWords {
+    font-size: 12px;
+    width: 33%;
+    background-color: white;
+
+}
+
+.vocabDef {
+    font-size: 12px;
+    width: 33%;
+    background-color: white;
+}
+
+.vocabCom {
+    font-size: 12px;
+    width: 33%;
+    background-color: white;
+}
+
+
+
+          
 }
