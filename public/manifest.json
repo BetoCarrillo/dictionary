@@ -1,8 +1,13 @@
 {
+  "name": "myvocabulary",
+  "icons": 
+[    {
+      "src": "/images/icons-vector.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }],
   "scope": "/",
-  "short_name": "Vocabylary",
-  "name": "Vocabulary",
-  "start_url": "/",
-  "display_override": ["standalone, minimal-ui"],
-  "display": "standalone"
+  "display_override": ["fullscreen, minimal-ui"],
+  "display": "fullscreen"
 }
+
