@@ -30,19 +30,19 @@ width: 60rem;
 
 
 .vocabFirstWord{
-width: 33% ;
+width: 30% ;
 background-color: rgb(172, 94, 172);
 text-align: center;
 
 }
 .vocabFirstDef {
-    width: 33%;
+    width: 30%;
     background-color: rgb(172, 94, 172);
     text-align: center;
 
 }
 .vocabFirstCom {
-    width: 33%;
+    width: 30%;
     background-color: rgb(172, 94, 172);
     text-align: center;
 
@@ -51,25 +51,25 @@ text-align: center;
 .vocabWords{
     border-bottom: rgb(0, 187, 255) 0.1px solid;
     
-width: 33%;
+width: 30%;
 background-color: white;
 
 }
 
 .vocabDef{
     border-bottom: rgb(0, 187, 255) 0.1px solid;
-width: 33%;
+width: 30%;
 background-color: white;
 }
 
 .vocabCom{
     border-bottom: rgb(0, 187, 255) 0.1px solid;
-width: 33%;
+width: 30%;
 background-color: white;
 }
 
 .vocabAdd{
-width: 0%;
+width: 3%;
 display: flex;
 gap: 3px;
 
