@@ -139,8 +139,8 @@ width: 20rem;
 height: 3.5rem;
 border-radius: 2rem;
     background-color: rgb(244, 210, 41);
-        border: none;
-        box-shadow: 0px 0px 4px 0px black;
+        border: black 1px solid;
+       
         outline: none;
         color: black;
             font-size: 24px;
@@ -151,11 +151,13 @@ border-radius: 2rem;
 .randomButton:hover {
     border: none;
     background-color: rgb(191, 165, 36);
-    box-shadow: 0px 0px 4px 0px black;
+    border: black 1px solid;
         outline: none;
         color: black;
        
 }
+
+
 
 .randomButton:focus {
    border: none;
@@ -171,7 +173,7 @@ border-radius: 2rem;
     border-radius: 4rem;
     background-color: rgb(244, 210, 41);
     border-color: rgb(140, 140, 0) !important;
-    box-shadow: 0px 0px 4px 0px black !important;
+    border: black 1px solid !important;
     outline: none;
     color: black;
     font-weight: bold;
@@ -183,11 +185,20 @@ border-radius: 2rem;
 font-size: 24px;
 }
 
+.SearchButton:focus {
+    border: none;
+    background-color: rgb(230, 198, 39);
+    box-shadow: 0px 0px 4px 0px black;
+    outline: none;
+    color: black;
+}
+
 .SearchButton:hover {
     border-color: none;
     background-color: rgb(191, 165, 36);
-    box-shadow: 0px 0px 4px 0px black;
+ 
 outline: none;
+border: black 1px solid !important;
 
 }
 
