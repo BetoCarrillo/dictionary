@@ -1,2 +1,5 @@
-{"display": "standalone",
-"display_override": "standalone"}
+
+{
+  "display_override": ["window-controls-overlay", "minimal-ui"],
+  "display": "standalone"
+}
