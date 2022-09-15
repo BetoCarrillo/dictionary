@@ -13,8 +13,12 @@
 
 .ponsLogo{
    padding-bottom: 40px;
-   margin-left: 2rem;
+   margin-left: 2.5rem;
+ 
 }
+
+
+
 .font-link {
     font-family: 'Raleway Dots',
         cursive;
@@ -23,7 +27,7 @@
 .brand-name {
     text-decoration: none;
 color: rgb(184, 242, 67);
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     margin-left: 1rem;
     font-weight: bold;
 }

@@ -1,5 +1,10 @@
-
 {
-  "display_override": ["window-controls-overlay", "minimal-ui"],
-  "display": "standalone"
+  "short_name": "React App",
+  "name": "Create React App Sample",
+
+  "start_url": ".",
+  "display_override": ["standalone,minimal-ui"],
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 }
