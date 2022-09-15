@@ -62,14 +62,14 @@ function NavBar() {
             )}
             <li>
               {" "}
-              <NavLink to="/login" onClick={handleLinkClick}>
-                {user ? "Logout" : "Login"}
+              <NavLink to="/about" onClick={handleLinkClick}>
+                About
               </NavLink>
             </li>
             <li>
               {" "}
-              <NavLink to="/about" onClick={handleLinkClick}>
-                About
+              <NavLink to="/login" onClick={handleLinkClick}>
+                {user ? "Logout" : "Login"}
               </NavLink>
             </li>
           </ul>

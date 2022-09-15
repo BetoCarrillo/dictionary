@@ -50,7 +50,7 @@ function Vocabulary() {
   const handleEnter = (event) => {
     if (event.key === "Enter") {
       alert(
-        `Please add your input to the specific word, by clicking the purple button right next to each row`
+        `Please add your input by using the edit button right next to each saved row`
       );
     }
   };

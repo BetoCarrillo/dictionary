@@ -17,6 +17,7 @@ function MoreDef({ words, target, roms }) {
 
   let cleanheadword = totalinfo
     .replace("", "")
+    .replace(/class="separator"/g, "")
     .replace(/</g, "")
     .replace(/>/g, "")
     .replace(/span/g, "")

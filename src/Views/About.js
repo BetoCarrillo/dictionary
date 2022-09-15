@@ -18,7 +18,7 @@ function About() {
         } */
     >
       <div className="aboutBrief">
-        <p className="titleBrief">About this page</p>
+        <p className="titleBrief">About this app</p>
         <p className="textBrief">
           This website was developed as part of Project 3 of the Code Academy
           Berlin program. The project consisted in building a free-of-choice Web
@@ -42,7 +42,6 @@ function About() {
         <p></p>
       </div>
       <div>
-        <p className="aboutContact">Contact</p>
         <hr
           style={{
             color: "white",
