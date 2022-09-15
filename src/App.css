@@ -152,7 +152,7 @@ border-radius: 2rem;
 
 .randomButton:hover {
     border: none;
-    background-color: rgb(230, 198, 39);
+    background-color: rgb(191, 165, 36);
     box-shadow: 0px 0px 4px 0px black;
         outline: none;
         color: black;
@@ -173,7 +173,7 @@ border-radius: 2rem;
     border-radius: 4rem;
     background-color: rgb(244, 210, 41);
     border-color: rgb(140, 140, 0) !important;
-    box-shadow: 0px 0px 4px 0px;
+    box-shadow: 0px 0px 4px 0px black !important;
     outline: none;
     color: black;
     font-weight: bold;
@@ -187,7 +187,7 @@ font-size: 24px;
 
 .SearchButton:hover {
     border-color: none;
-    background-color: rgb(230, 198, 39);
+    background-color: rgb(191, 165, 36);
     box-shadow: 0px 0px 4px 0px black;
 outline: none;
 
