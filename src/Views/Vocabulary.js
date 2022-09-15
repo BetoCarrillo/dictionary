@@ -12,11 +12,9 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import { db } from "../firebaseconfig";
-import { Tooltip } from "react-bootstrap";
 
 function Vocabulary() {
-  const { user, setUser, userLogIn, userLogOut, resetPass } =
-    useContext(AuthContext);
+  const { user, setUser, userLogIn, userLogOut } = useContext(AuthContext);
   const [comment, setComment] = useState("");
   const [commentDisplay, setCommentDisplay] = useState(null);
 

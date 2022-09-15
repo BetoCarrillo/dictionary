@@ -22,7 +22,7 @@ function About() {
         <p className="textBrief">
           This website was developed as part of Project 3 of the Code Academy
           Berlin program. The project consisted in building a free-of-choice Web
-          Progressive App using Firebase. <br />
+          Progressive App using Firebase as back-end. <br />
           <br /> This Vocabulary App works with the PONS’ online Dictionary API
           and its purpose is to help me increase my German vocabulary. <br />
           <br /> In the <span className="colorText">Words </span> tab, any word
@@ -52,7 +52,11 @@ function About() {
         />
         <div className="aboutLogos ">
           <div>
-            <a href="https://github.com/BetoCarrillo" target={"_blank"}>
+            <a
+              rel="noreferrer"
+              href="https://github.com/BetoCarrillo"
+              target={"_blank"}
+            >
               <div className="gitLogoDiv ">
                 <img src={github} alt="" height={55}></img>
               </div>
@@ -63,6 +67,7 @@ function About() {
           </div>
           <div>
             <a
+              rel="noreferrer"
               href="https://www.linkedin.com/in/alberto-carrillo-ch/"
               target={"_blank"}
             >
@@ -86,7 +91,11 @@ function About() {
             </div>
             <div className="mailflex">
               {" "}
-              <a href="mailto:alberto.carrillo01@gmail.com" target={"_blank"}>
+              <a
+                rel="noreferrer"
+                href="mailto:alberto.carrillo01@gmail.com"
+                target={"_blank"}
+              >
                 <div className="mailNameDiv overlay">Mail</div>
               </a>
               <Overlay target={target.current} show={show} placement="top">

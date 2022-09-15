@@ -4,11 +4,9 @@ import { AuthContext } from "../Context/authcontext";
 import "../styles/login.css";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-import { auth } from "../firebaseconfig";
 
 const Login = () => {
-  const { user, setUser, userLogIn, userLogOut, resetPass, error } =
-    useContext(AuthContext);
+  const { user, userLogIn, userLogOut } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const redirectLogin = useNavigate();

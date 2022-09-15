@@ -5,7 +5,6 @@
     gap: 1rem;
 }
 
-
 .hidden{
     display: none !important;
 }
@@ -46,12 +45,8 @@
     font-size: 1.5rem;
 }
 
-.aboutContact {
-    margin-bottom: 0;
-    color: rgb(1, 1, 111);
-    font-size: 2rem;
-    font-weight: bold;
-    margin-left: 30%;
+.textBrief{
+    font-size: 20px;
 }
 
 .botBreakLine{

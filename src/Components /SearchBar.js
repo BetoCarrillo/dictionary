@@ -1,13 +1,13 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { DictionaryContext } from "../Context/dictionarycontext";
 
 function SearchBar() {
-  const { search, setSearch, words, setWords, fetchData } =
-    useContext(DictionaryContext);
+  const { fetchData } = useContext(DictionaryContext);
 
   const handleEnter = (event) => {
     if (event.key === "Enter") {
       fetchData(event.target.value);
+      event.target.value = "";
     }
   };
   return (

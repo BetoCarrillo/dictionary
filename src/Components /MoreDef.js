@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 /* import { useParams } from 'react-router-dom' */
-import Button from "react-bootstrap/esm/Button";
-import { Link } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import "../styles/modal.css";
 
@@ -42,12 +40,14 @@ function MoreDef({ words, target, roms }) {
     .replace(/ {3}/g, "")
     .replace(/ {2}/g, " ")
     .replace(/ {1}/g, " ")
-    .replace(/[0-9]/g, "");
-  function replaceWithBr() {
+    .replace(/[0-9]/g, "")
+    .replace(/\s/g, "<br>")
+    .replace("flexion", " ");
+  /*   function replaceWithBr() {
     return cleanheadword
       .replace(/~/g, "<br />")
       .replace("flexion", "<br />flexion");
-  }
+  } */
 
   return (
     <div className="infoLogo">
@@ -71,15 +71,15 @@ function MoreDef({ words, target, roms }) {
               : words.words[0].hits[0].target}
           </Modal.Header>
           <Modal.Body className="modalbackgroundcolor modaltext">
-            {roms ? (
-              <div dangerouslySetInnerHTML={{ __html: replaceWithBr() }} />
-            ) : (
-              <div
+            {
+              roms ? cleanheadword : words.words[0]?.hits[0].source
+              /*  <div dangerouslySetInnerHTML={{ __html: replaceWithBr() }} /> */
+              /*  <div
                 dangerouslySetInnerHTML={{
                   __html: words.words[0]?.hits[0].source,
                 }}
-              />
-            )}
+              /> */
+            }
 
             {/*       <div>
               {words.words[0].hits[0]?.roms[0] ?  <div dangerouslySetInnerHTML={{ __html: replaceWithBr() }}

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import Card from "react-bootstrap/Card";
 import { useNavigate } from "react-router-dom";
 import MoreDef from "./MoreDef";
@@ -64,27 +64,21 @@ function WordCards(words, target, cleandef) {
               {roms ? words.words[0].hits[0].roms[0].wordclass : ""}
             </Card.Subtitle>
             <Card.Text>
-              {targets !== "" ? (
-                targets
-                  .map((target, i) => {
-                    let alldef = target.target;
-                    let cleandef = alldef
-                      .replace(/sth/g, "something ")
-                      .replace(/(<([^>]+)>)/gi, "")
-                      .replace(/#/g, "")
-                      .replace(/&/g, "")
-                      .replace(/[0-9]/g, "")
-                      .replace(/;/g, "'");
-                    return cleandef;
-                  })
-                  .join("\n")
-              ) : (
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: words.words[0]?.hits[0].source,
-                  }}
-                />
-              )}
+              {targets !== ""
+                ? targets
+                    .map((target, i) => {
+                      let alldef = target.target;
+                      let cleandef = alldef
+                        .replace(/sth/g, "something ")
+                        .replace(/(<([^>]+)>)/gi, "")
+                        .replace(/#/g, "")
+                        .replace(/&/g, "")
+                        .replace(/[0-9]/g, "")
+                        .replace(/;/g, "'");
+                      return cleandef;
+                    })
+                    .join("\n")
+                : words.words[0]?.hits[0].source.replace(/(<([^>]+)>)/gi, "")}
             </Card.Text>
             <div className="logos">
               {<MoreDef words={words} roms={roms} />}

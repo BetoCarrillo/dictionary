@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Random from "../Components /Random";
 import SearchBar from "../Components /SearchBar";
@@ -26,7 +26,7 @@ function Dictionary() {
   }, [search]); */
 
   return (
-    <div>
+    <div className="bodydictionarydiv">
       {user ? (
         <div className="welcome">
           {" "}

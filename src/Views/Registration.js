@@ -11,9 +11,18 @@ function Registration() {
   const [displayName, setDisplayName] = useState("");
   const { user, setUser, registerNewUser } = useContext(AuthContext);
   const redirectLogin = useNavigate();
+  const [passwordType, setPasswordType] = useState("password");
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
+  };
+
+  const togglePassword = () => {
+    if (passwordType === "password") {
+      setPasswordType("text");
+      return;
+    }
+    setPasswordType("password");
   };
 
   const handlePasswordChange = (e) => {
@@ -70,37 +79,51 @@ function Registration() {
     >
       <input className="logInput" type="input" name="username"  placeholder='Username ' value={displayName} onChange={handleNameChange}></input>
         </OverlayTrigger> */}
-
-          <OverlayTrigger
-            placement="right"
-            delay={{ show: 250, hide: 400 }}
-            overlay={renderTooltip}
-          >
-            <input
-              id="email"
-              className="logInput"
-              type="text"
-              name="email"
-              placeholder="Email address"
-              value={email}
-              onChange={handleEmailChange}
-            ></input>
-          </OverlayTrigger>
-          <OverlayTrigger
-            placement="right"
-            delay={{ show: 250, hide: 400 }}
-            overlay={secondRenderTooltip}
-          >
-            <input
-              id="password"
-              className="logInput"
-              type="text"
-              name="password"
-              placeholder="Password"
-              value={password}
-              onChange={handlePasswordChange}
-            ></input>
-          </OverlayTrigger>
+          <div>
+            <OverlayTrigger
+              placement="right"
+              delay={{ show: 250, hide: 400 }}
+              overlay={renderTooltip}
+            >
+              <input
+                id="email"
+                className="logInput"
+                type="text"
+                name="email"
+                placeholder="Email address"
+                value={email}
+                onChange={handleEmailChange}
+              ></input>
+            </OverlayTrigger>
+          </div>
+          <div>
+            <OverlayTrigger
+              placement="right"
+              delay={{ show: 250, hide: 400 }}
+              overlay={secondRenderTooltip}
+            >
+              <input
+                id="password"
+                className="logInput"
+                name="password"
+                placeholder="Password"
+                type={passwordType}
+                value={password}
+                onChange={handlePasswordChange}
+              ></input>
+            </OverlayTrigger>
+            <div className="showBut">
+              {!user ? (
+                <p className="showpasswordtext" onClick={togglePassword}>
+                  <span className="material-symbols-outlined visibility ">
+                    visibility
+                  </span>
+                </p>
+              ) : (
+                ""
+              )}
+            </div>
+          </div>
 
           <p className="termsText">Joining accepts terms & conditions</p>
           <button
