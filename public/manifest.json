@@ -7,7 +7,7 @@
       "sizes": "512x512"
     }],
   "scope": "/",
-  "display_override": ["fullscreen, minimal-ui"],
-  "display": "fullscreen"
+  "display_override": ["standalone, minimal-ui"],
+  "display": "standalone"
 }
 

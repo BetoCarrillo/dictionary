@@ -20,11 +20,11 @@ function MoreDef({ words, target, roms }) {
     .replace(/>/g, "")
     .replace(/span/g, "")
     .replace(/sup/g, " ")
-    .replace("wordclass", "")
+    .replace('class="wordclass', "")
     .replace(/class/, "")
-    .replace(/=/g, "")
+    .replace(/=/g, "~")
     .replace(/span class/g, "")
-    .replace(/class/g, "~")
+    .replace(/class/g, "")
     .replace(/title/g, "")
     .replace("/", "")
     .replace("/", "")
@@ -40,14 +40,11 @@ function MoreDef({ words, target, roms }) {
     .replace(/ {3}/g, "")
     .replace(/ {2}/g, " ")
     .replace(/ {1}/g, " ")
-    .replace(/[0-9]/g, "")
-    .replace(/\s/g, "<br>")
-    .replace("flexion", " ");
-  /*   function replaceWithBr() {
-    return cleanheadword
-      .replace(/~/g, "<br />")
-      .replace("flexion", "<br />flexion");
-  } */
+    .replace(/[0-9]/g, "");
+
+  function replaceWithBr() {
+    return cleanheadword.replace(/~/g, "<br/>");
+  }
 
   return (
     <div className="infoLogo">
@@ -72,7 +69,17 @@ function MoreDef({ words, target, roms }) {
           </Modal.Header>
           <Modal.Body className="modalbackgroundcolor modaltext">
             {
-              roms ? cleanheadword : words.words[0]?.hits[0].source
+              roms ? (
+                <div dangerouslySetInnerHTML={{ __html: replaceWithBr() }} />
+              ) : (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: words.words[0]?.hits[0].source,
+                  }}
+                />
+              )
+
+              /*  roms ? cleanheadword : words.words[0]?.hits[0].source */
               /*  <div dangerouslySetInnerHTML={{ __html: replaceWithBr() }} /> */
               /*  <div
                 dangerouslySetInnerHTML={{
