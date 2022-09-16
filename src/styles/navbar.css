@@ -26,7 +26,8 @@
 
 .brand-name {
     text-decoration: none;
-color: rgb(184, 242, 67);
+color: 
+rgb(172, 94, 172);
     font-size: 0.8rem;
     margin-left: 1rem;
     font-weight: bold;
@@ -34,7 +35,7 @@ color: rgb(184, 242, 67);
 
 .brand-name:hover {
 
-color: rgb(2, 2, 52);
+color: rgb(184, 242, 67);
 
 }
 

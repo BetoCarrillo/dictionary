@@ -2,6 +2,7 @@ import React, { useState } from "react";
 /* import { useParams } from 'react-router-dom' */
 import Modal from "react-bootstrap/Modal";
 import "../styles/modal.css";
+import DOMPurify from "dompurify";
 
 function MoreDef({ words, target, roms }) {
   /*   let words = useParams() */
@@ -40,11 +41,16 @@ function MoreDef({ words, target, roms }) {
     .replace(/ {3}/g, "")
     .replace(/ {2}/g, " ")
     .replace(/ {1}/g, " ")
-    .replace(/[0-9]/g, "");
+    .replace(/[0-9]/g, "")
+    .replace(/~/g, "<br/>");
 
-  function replaceWithBr() {
+  let modaltextone = DOMPurify.sanitize(cleanheadword);
+
+  /*   function replaceWithBr() {
     return cleanheadword.replace(/~/g, "<br/>");
-  }
+  } */
+
+  let modaltext = DOMPurify.sanitize(words.words[0]?.hits[0].source);
 
   return (
     <div className="infoLogo">
@@ -65,16 +71,17 @@ function MoreDef({ words, target, roms }) {
             {" "}
             {roms
               ? words.words[0].hits[0].roms[0].headword
-              : words.words[0].hits[0].target}
+              : words.words[0].hits[0].target.replace(/(<([^>]+)>)/gi, "")}
           </Modal.Header>
           <Modal.Body className="modalbackgroundcolor modaltext">
             {
               roms ? (
-                <div dangerouslySetInnerHTML={{ __html: replaceWithBr() }} />
+                <div dangerouslySetInnerHTML={{ __html: modaltextone }} />
               ) : (
+                /*  <div dangerouslySetInnerHTML={{ __html: replaceWithBr() }} /> */
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: words.words[0]?.hits[0].source,
+                    __html: modaltext,
                   }}
                 />
               )

@@ -8,6 +8,7 @@
     }],
   "scope": "/",
   "display_override": ["standalone, minimal-ui"],
-  "display": "standalone"
+  "display": "standalone",
+  "theme_color": "rgb(0, 187, 255)"
 }
 
