@@ -2,12 +2,13 @@
   "name": "myvocabulary",
   "icons": 
 [    {
-      "src": "/images/icons-vector.svg",
-      "type": "image/svg+xml",
+      "src": ".styles/images/icon.png",
+      "type": "image/png",
       "sizes": "512x512"
     }],
+    "start_url":"https://myvocabulary.netlify.app/", 
   "scope": "/",
-  "display_override": ["standalone, minimal-ui"],
+  "display_override": "standalone",
   "display": "standalone",
   "theme_color": "rgb(0, 187, 255)"
 }
