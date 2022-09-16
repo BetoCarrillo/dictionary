@@ -1,13 +1,15 @@
+
+
 {
   "name": "myvocabulary",
   "icons": 
 [    {
-      "src": "../styles/images/icon.png",
+      "src": ".../styles/images/icon.png",
       "type": "image/png",
       "sizes": "512x512"
     }],
     "id":"/",
-    "start_url":"https://myvocabulary.netlify.app/", 
+  "start_url":"https://myvocabulary.netlify.app/", 
   "scope": "/",
   "display_override": ["standalone", "minimal-ui"],
   "display": "standalone",
