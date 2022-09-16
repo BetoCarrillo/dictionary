@@ -6,7 +6,6 @@ import {
   onAuthStateChanged,
   signOut,
   sendPasswordResetEmail,
-  updateProfile,
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
@@ -90,17 +89,19 @@ export const AuthContextProvider = (props) => {
       });
   };
 
-  const resetPass = (email) => {
+  const resetpassword = (email) => {
     sendPasswordResetEmail(auth, email)
       .then(() => {
-        /*     console.log("Password reset email sent")
-         */
+        alert(`Password reset email sent successfully`);
+        /* console.log("Password reset email sent"); */
+
         // Password reset email sent!
         // ..
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        alert(`Email address is not in our database`);
         /* console.log("error", error); */
         setError(error);
         // ..
@@ -119,7 +120,7 @@ export const AuthContextProvider = (props) => {
         registerNewUser,
         userLogIn,
         userLogOut,
-        resetPass,
+        resetpassword,
         error,
         setError,
       }}

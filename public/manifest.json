@@ -10,7 +10,7 @@
     }],
     "id":"/",
   "start_url":"https://myvocabulary.netlify.app/", 
-  "scope": "/",
+  "scope":"https://myvocabulary.netlify.app/",
   "display_override": ["standalone", "minimal-ui"],
   "display": "standalone",
   "theme_color": "rgb(0, 187, 255)"

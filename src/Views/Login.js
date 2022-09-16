@@ -6,7 +6,8 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 
 const Login = () => {
-  const { user, userLogIn, userLogOut } = useContext(AuthContext);
+  const { user, userLogIn, userLogOut, resetpassword } =
+    useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const redirectLogin = useNavigate();
@@ -37,9 +38,9 @@ const Login = () => {
     userLogOut();
   };
 
-  /*   const handleResetPass = () => {
-    resetPass();
-   } */
+  const handleResetPass = () => {
+    resetpassword(email);
+  };
 
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
@@ -106,15 +107,19 @@ const Login = () => {
           ) : (
             ""
           )}
-          {/*    <p onClick={handleResetPass}>Forgot your password?</p> */}
 
           <div className="showBut">
             {!user ? (
-              <p className="showpasswordtext" onClick={togglePassword}>
-                <span className="material-symbols-outlined visibility ">
-                  visibility
-                </span>
-              </p>
+              <div className="passwordOPT">
+                <p className="showpasswordtext" onClick={togglePassword}>
+                  <span className="material-symbols-outlined visibility ">
+                    visibility
+                  </span>
+                </p>
+                <p className="forgotPassword" onClick={handleResetPass}>
+                  Forgot your password?
+                </p>
+              </div>
             ) : (
               ""
             )}
